@@ -1,0 +1,22 @@
+.selecao{
+	width: 80%;
+	height: 100px;
+	background-color: green;
+	margin: auto;
+}
+
+.caixa{
+	width: 100px;
+	height: 100px;
+	background-color: #82c7f4;
+	float: right;
+	margin-left: 20px;
+}
+.caixa.selecionado{
+	/*border: 5px solid red;*/
+	background-color: #0080ff;
+}
+.quadro{
+	width:90% ;
+	margin: auto;
+}
