@@ -29,34 +29,7 @@ public class Netflix extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
         //System.out.println(request.getParameter("parametro"));
       
-        String email = request.getParameter("email");
-        String senha = request.getParameter("senha");
-        ConexaoJDBC conectaBD;
-        conectaBD = new ConexaoJDBC();
         
-        Connection conecta;
-        try {
-            conecta = conectaBD.ConectaBD();
-            PreparedStatement pEmail = conecta.prepareStatement("select * from usuario where email = ?");
-            pEmail.setString(1, email);
-            ResultSet rEmail = pEmail.executeQuery();
-            if(rEmail.next()){
-                
-                    if(rEmail.getString("senha") == senha){
-                        System.out.println("Bem Vindo, "+rEmail.getString("nome"));
-                    }else{
-                        System.out.println(rEmail.getString("rua"));
-                    }
-                
-            }else{              
-                System.out.println("Não foi possível encontrar o Email, tente novamente...");                
-            }
-            conecta.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(Netflix.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Netflix.class.getName()).log(Level.SEVERE, null, ex);
-        }
         /*try {
             conecta = teste.ConectaBD();
             PreparedStatement p = conecta.prepareStatement("select * from usuario");

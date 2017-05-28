@@ -45,7 +45,7 @@
 			<div class ="conteudo">
 			<h1> See what's next.</h1>
 			<p> ASSISTA ONDE QUISER. CANCELE QUANDO QUISER.</p>
-			<a href="../br/plano.html" class="botao meio">ASSISTA UM MES GRATIS</a>
+			<a href="../br/plano.jsp" class="botao meio">ASSISTA UM MES GRATIS</a>
 
 			</div>
 

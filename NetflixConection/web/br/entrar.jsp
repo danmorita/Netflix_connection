@@ -6,7 +6,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="pr-br">
     <head>
         <meta charset="utf-8"/>
@@ -25,7 +24,7 @@
                 <h1>Entrar</h1>	
                 <div class="login">
                     <div>
-                        <form action="http://localhost:8080/NetflixConection/Netflix" method="post">
+                        <form action="http://localhost:8080/NetflixConection/LoginServlet" method="post">
                             <span>Email</span>
                             <input class="email" type="text" name="email">
                             <span>Senha</span>

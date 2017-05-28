@@ -32,26 +32,26 @@ public class LoginServlet extends HttpServlet {
         String senha = request.getParameter("senha");
         ConexaoJDBC conectaBD;
         conectaBD = new ConexaoJDBC();
-        
         Connection conecta;
+        if (email == null || email.isEmpty()) {
+                  System.out.println("Login não informado!");
+        }
+        if (senha == null || senha.isEmpty()) {
+                  System.out.println("Senha não informado!");
+              }
         try {
             conecta = conectaBD.ConectaBD();
             PreparedStatement pEmail = conecta.prepareStatement("select * from usuario where email = ?");
             pEmail.setString(1, email);
             ResultSet rEmail = pEmail.executeQuery();
-            if((!rEmail.next())){
-                PreparedStatement pSenha = conecta.prepareStatement("select * from usuario where senha = ?");
-                pSenha.setString(1, senha);
-                ResultSet rSenha = pSenha.executeQuery();
-                while(rSenha.next()){
-                    if(rEmail.getString("id")==rSenha.getString("id")){
+            if(rEmail.next()){
+                    if(rEmail.getString("senha").equals(senha)){
                         System.out.println("Bem Vindo, "+rEmail.getString("nome"));
                     }else{
-                        System.out.println("deu ruims");
+                        System.out.println("Senha invalido, tente novamente...");
                     }
-                }
             }else{              
-                System.out.println("Não foi possível encontrar o Email, tente novamente...");                
+                System.out.println("Email invalido, tente novamente...");                
             }
             conecta.close();
         } catch (SQLException ex) {
@@ -59,6 +59,5 @@ public class LoginServlet extends HttpServlet {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Netflix.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
     }
 }

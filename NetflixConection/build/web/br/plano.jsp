@@ -21,8 +21,8 @@
     <body>
         <div class="top">
         	<div class="ico">
-				<a href="index.html" ><img class="logo" src="../Imagens/logo.png"/></a>
-				<a href="../br/entrar.html" class="botao login">Entrar</a>
+				<a href="index.jsp" ><img class="logo" src="../Imagens/logo.png"/></a>
+				<a href="../br/entrar.jsp" class="botao login">Entrar</a>
 			</div>
         </div>
         <div class="mid">
